@@ -1,23 +1,20 @@
 "use strict";
 
-var arr = [1, 3, 4, 5, 6]; //arrow function
-//função anonima
+//valor padrao
+function soma() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+  return a + b;
+}
 
-var newArr = arr.map(function (item) {
-  return item + 2;
-});
-console.log(newArr);
+console.log(soma(1));
+console.log(soma()); //com ARROW FUNCTIONS
 
-var teste = function teste() {
-  return [1, 2, 3];
+var soma2 = function soma2() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+  return a + b;
 };
 
-console.log(teste()); //para retornar um objeto temos que colocar o objeto entre parenteses "("{nome: 'Brenno'} ")"
-
-var retornaobjeto = function retornaobjeto() {
-  return {
-    nome: 'Brenno'
-  };
-};
-
-console.log(retornaobjeto());
+console.log(soma2(2));
+console.log(soma2());
