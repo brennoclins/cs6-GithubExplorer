@@ -1,12 +1,22 @@
-//valor padrao
-function soma(a = 3, b = 6){
-    return a + b;
+const usuario = {
+    nome: 'Brenno',
+    idade: 38,
+    endereco: {
+        cidade: 'Olinda',
+        estado: 'PE',
+    },
+};
+
+console.log(usuario)
+
+//desestruturação
+const { nome, idade, endereco:{cidade} } = usuario;
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+
+
+function mostraNome({nome, idade, endereco:{estado}}){
+    console.log(nome, idade, estado)
 }
-console.log(soma(1));
-console.log(soma());
-
-//com ARROW FUNCTIONS
-const soma2 = (a = 3, b = 6) => a + b;
-
-console.log(soma2(2));
-console.log(soma2());
+mostraNome(usuario);
