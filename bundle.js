@@ -1,12 +1,12 @@
 "use strict";
 
-//mutação em constantes
+function teste(x) {
+  var y = 2;
 
-/**
- * Mutação em uma constante ocorre quando mantemos a mesma estrutura e so mudamos o dado dentro dela
- */
-var usuario = {
-  nome: 'Brenno'
-};
-usuario.nome = 'Dev Kvera';
-console.log(usuario.nome);
+  if (x > 5) {
+    var _y = 4;
+    console.log(x, _y);
+  }
+}
+
+console.log(teste(10));

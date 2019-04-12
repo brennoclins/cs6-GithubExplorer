@@ -1,8 +1,9 @@
-//mutação em constantes
-/**
- * Mutação em uma constante ocorre quando mantemos a mesma estrutura e so mudamos o dado dentro dela
- */
-const usuario = { nome: 'Brenno'};
+function teste(x){
+    let y = 2;
+    if (x > 5){
+        let y = 4;
+        console.log(x,y);
+    }
+}
 
-usuario.nome = 'Dev Kvera';
-console.log(usuario.nome)
+console.log(teste(10));
