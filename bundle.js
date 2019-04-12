@@ -44,10 +44,23 @@ function (_List) {
   _inherits(TodoList, _List);
 
   function TodoList() {
+    var _this;
+
     _classCallCheck(this, TodoList);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(TodoList).apply(this, arguments));
-  }
+    //chama o construtor da classe pai
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TodoList).call(this));
+    _this.usuario = 'Brenno';
+    return _this;
+  } //metodo da classe
+
+
+  _createClass(TodoList, [{
+    key: "mostraUsuario",
+    value: function mostraUsuario() {
+      console.log(this.usuario);
+    }
+  }]);
 
   return TodoList;
 }(List);
@@ -57,3 +70,25 @@ var MinhaLista = new TodoList();
 document.getElementById('novotodo').onclick = function () {
   MinhaLista.add("Novo Todo");
 };
+
+MinhaLista.mostraUsuario();
+
+var Matematica =
+/*#__PURE__*/
+function () {
+  function Matematica() {
+    _classCallCheck(this, Matematica);
+  }
+
+  _createClass(Matematica, null, [{
+    key: "soma",
+    //metodo estatico da classe matematica
+    value: function soma(a, b) {
+      return a + b;
+    }
+  }]);
+
+  return Matematica;
+}();
+
+console.log(Matematica.soma(10, 32));
