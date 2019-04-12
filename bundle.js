@@ -6,8 +6,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-alert('testee');
-
 var Test =
 /*#__PURE__*/
 function () {
@@ -18,6 +16,9 @@ function () {
   _createClass(Test, [{
     key: "metodo",
     value: function metodo() {}
+  }, {
+    key: "metodo2",
+    value: function metodo2() {}
   }]);
 
   return Test;

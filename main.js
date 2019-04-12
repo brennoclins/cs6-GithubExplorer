@@ -1,5 +1,4 @@
-alert('testee');
-
 class Test{
     metodo(){}
+    metodo2(){}
 }
