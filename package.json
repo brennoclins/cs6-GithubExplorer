@@ -1,0 +1,12 @@
+{
+  "name": "cursoCS6",
+  "version": "1.0.0",
+  "description": "Curso de javascript CS6+",
+  "main": "index.js",
+  "author": "BCL-ST",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/preset-env": "^7.4.3"
+  }
+}
