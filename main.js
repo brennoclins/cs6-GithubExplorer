@@ -73,7 +73,7 @@ mostraNome(usuario);
 /**
  * Opera dores Rest e Spread
  */
-
+/*
  //REST (pega o resto das propriedades de algo)
  const usuario = {
      nome: 'Brenno',
@@ -113,3 +113,11 @@ mostraNome(usuario);
  console.log(usuario1);
  const usuario2 = {...usuario1, nome: 'Amanda', idade: 21, endereco:'Jardim Brasil 2'};
  console.log(usuario2);
+*/
+
+const nome = 'Brenno';
+const idade = 38;
+
+console.log('Meu nome é ' + nome + " e tenho idade: " + idade) + ' anos';
+//com template literals
+console.log(`Meu nome é ${nome} e tenho ${idade} anos!!`);
