@@ -144,6 +144,7 @@ console.log(usuario);
  * Testando webpack
  */
 
- import { soma } from './funcoes';
+ import * as funcoes from './funcoes';
 
- console.log(soma(1, 2));
+ console.log(funcoes.soma(1, 2));
+ console.log(funcoes.sub(3, 1));
