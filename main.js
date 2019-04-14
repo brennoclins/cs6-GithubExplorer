@@ -115,9 +115,25 @@ mostraNome(usuario);
  console.log(usuario2);
 */
 
+/**
+ * Template literals
+ */
+/*
 const nome = 'Brenno';
 const idade = 38;
 
 console.log('Meu nome é ' + nome + " e tenho idade: " + idade) + ' anos';
 //com template literals
 console.log(`Meu nome é ${nome} e tenho ${idade} anos!!`);
+*/
+
+/**
+ * Object short syntax
+ */
+const nome = 'Brenno';
+const idade = 38;
+
+const usuario = {
+    nome,idade, empresa: 'BCL-ST'
+};
+console.log(usuario);

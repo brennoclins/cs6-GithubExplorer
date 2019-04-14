@@ -117,8 +117,28 @@ mostraNome(usuario);
  const usuario2 = {...usuario1, nome: 'Amanda', idade: 21, endereco:'Jardim Brasil 2'};
  console.log(usuario2);
 */
+
+/**
+ * Template literals
+ */
+
+/*
+const nome = 'Brenno';
+const idade = 38;
+
+console.log('Meu nome é ' + nome + " e tenho idade: " + idade) + ' anos';
+//com template literals
+console.log(`Meu nome é ${nome} e tenho ${idade} anos!!`);
+*/
+
+/**
+ * Object short syntax
+ */
 var nome = 'Brenno';
 var idade = 38;
-console.log('Meu nome é ' + nome + " e tenho idade: " + idade) + ' anos'; //com template literals
-
-console.log("Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade, " anos!!"));
+var usuario = {
+  nome: nome,
+  idade: idade,
+  empresa: 'BCL-ST'
+};
+console.log(usuario);
