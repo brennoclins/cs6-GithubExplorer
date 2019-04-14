@@ -130,6 +130,7 @@ console.log(`Meu nome é ${nome} e tenho ${idade} anos!!`);
 /**
  * Object short syntax
  */
+/*
 const nome = 'Brenno';
 const idade = 38;
 
@@ -137,3 +138,12 @@ const usuario = {
     nome,idade, empresa: 'BCL-ST'
 };
 console.log(usuario);
+*/
+
+/**
+ * Testando webpack
+ */
+
+ import { soma } from './funcoes';
+
+ console.log(soma(1, 2));
