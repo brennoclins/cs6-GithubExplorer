@@ -1,3 +1,4 @@
+import api from './api';
 
 class App {
     constructor() {
@@ -5,7 +6,8 @@ class App {
         this.repositories = []
 
         this.formEl = document.getElementById("repo-from");
-        
+        //pegando no html um input com "name=repository"
+        this.inputEl = document.querySelector('input[name=repository]')
         this.listEl = document.getElementById('repo-list');
         
         this.registerHandlers();
@@ -15,16 +17,27 @@ class App {
         this.formEl.onsubmit = event => this.addRepository(event);
     }
 
-    addRepository(event) {
+    //transformando o metodo em assicrono com "async"
+    async addRepository(event) {
         event.preventDefault();
 
-        this.repositories.push({
-            name: 'curso-javascript-do-zero',
-            description: 'Código reproduzido durante o curso de Javascript do zero',
-            avatar_url: 'https://avatars0.githubusercontent.com/u/28929274?v-4',
-            html_url: 'https://github.com/Rocketseat/curso-javascript-do-zero',
-        });
+        const repoInput = this.inputEl.value;
+        if (repoInput.length === 0)
+            return;
+        
+        const response = await api.get(`/repos/${repoInput}`);
+        const { name, description, html_url, owner: { avatar_url } } = response.data;
 
+        this.repositories.push({
+            name,
+            description,
+            avatar_url,
+            html_url,
+        });
+        //linpando o campo input
+        this.inputEl.value = '';
+        
+        //renderizando a tela
         this.render();
     }
 
@@ -46,6 +59,7 @@ class App {
 
             let linkEl = document.createElement('a');
             linkEl.setAttribute('target', '_blank');
+            linkEl.setAttribute('href', repo.html_url);
             linkEl.appendChild(document.createTextNode('Acessar'));
 
             let listItemEl = document.createElement('li');
