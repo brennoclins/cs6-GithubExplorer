@@ -25,20 +25,25 @@ class App {
         if (repoInput.length === 0)
             return;
         
-        const response = await api.get(`/repos/${repoInput}`);
-        const { name, description, html_url, owner: { avatar_url } } = response.data;
+        //controle de erros com TRY CATCH
+        try{
+            const response = await api.get(`/repos/${repoInput}`);
+            const { name, description, html_url, owner: { avatar_url } } = response.data;
 
-        this.repositories.push({
-            name,
-            description,
-            avatar_url,
-            html_url,
-        });
-        //linpando o campo input
-        this.inputEl.value = '';
-        
-        //renderizando a tela
-        this.render();
+            this.repositories.push({
+                name,
+                description,
+                avatar_url,
+                html_url,
+            });
+            //linpando o campo input
+            this.inputEl.value = '';
+
+            //renderizando a tela
+            this.render();
+        } catch (err) {
+            alert('O repositório não existe');
+        }
     }
 
     render() {
