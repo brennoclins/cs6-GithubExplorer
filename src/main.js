@@ -17,6 +17,19 @@ class App {
         this.formEl.onsubmit = event => this.addRepository(event);
     }
 
+    //criando uma mensagem de loading
+    setLoading(loading = true) {
+        if (loading === true) {
+            let loadingEl = document.createElement('span');
+            loadingEl.appendChild(document.createTextNode('Carregando...'))
+            loadingEl.setAttribute('id', 'loading');
+            //adicionando o novo elemento no form
+            this.formEl.appendChild(loadingEl)
+        } else {
+            // se não for LOADING remove o elemento da tela
+            document.getElementById('loading').remove();
+        }
+    }
     //transformando o metodo em assicrono com "async"
     async addRepository(event) {
         event.preventDefault();
@@ -25,6 +38,9 @@ class App {
         if (repoInput.length === 0)
             return;
         
+        //colocando para aparecer na tela o loading
+        this.setLoading();
+
         //controle de erros com TRY CATCH
         try{
             const response = await api.get(`/repos/${repoInput}`);
@@ -44,6 +60,9 @@ class App {
         } catch (err) {
             alert('O repositório não existe');
         }
+
+        //retirando a informação do loading da tela
+        this.setLoading(false);
     }
 
     render() {
