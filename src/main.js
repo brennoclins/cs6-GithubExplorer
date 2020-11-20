@@ -69,30 +69,35 @@ class App {
         //limpa toda a lista
         this.listEl.innerHTML = '';
 
-        this.repositories.forEach(repo => {
+        this.repositories.forEach(repo => {                        
+            let divEl = document.createElement('div');
+            divEl.setAttribute('class', 'col-12 m-3');
+            
             let imgEl = document.createElement('img');
             imgEl.setAttribute('src', repo.avatar_url);
             //atributo do bootstrap
-            imgEl.setAttribute('class', 'img-thumbnail col-4');
-
-            let titleEl = document.createElement('strong');
+            imgEl.setAttribute('class', 'img-thumbnail col-2');
+            
+            let titleEl = document.createElement('h1');
             titleEl.appendChild(document.createTextNode(repo.name));
-
+            
             let descriptionEl = document.createElement('p');
             descriptionEl.appendChild(document.createTextNode(repo.description));
-
+            
             let linkEl = document.createElement('a');
+            linkEl.setAttribute('class', 'btn btn-outline-success');
             linkEl.setAttribute('target', '_blank');
             linkEl.setAttribute('href', repo.html_url);
             linkEl.appendChild(document.createTextNode('Acessar'));
-
+            
             let listItemEl = document.createElement('li');
-            listItemEl.setAttribute('class', 'list-group-item list-group-item-action');
+            listItemEl.setAttribute('class', 'list-group-item m-2');
             listItemEl.appendChild(imgEl);
+            listItemEl.appendChild(divEl);
             listItemEl.appendChild(titleEl);
             listItemEl.appendChild(descriptionEl);
             listItemEl.appendChild(linkEl);
-
+                        
             this.listEl.appendChild(listItemEl);
         });
 
