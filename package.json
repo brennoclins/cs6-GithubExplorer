@@ -1,5 +1,5 @@
 {
-  "name": "CS6",
+  "name": "cs6",
   "version": "1.0.0",
   "description": "Curso de javascript CS6",
   "main": "index.js",
@@ -19,8 +19,8 @@
     "webpack-dev-server": "^3.3.1"
   },
   "scripts": {
-    "dev": "babel ./src/main.js -o ./bundle.js -w",
-    "webdev": "webpack-dev-server --mode=development",
+    "dev-babel": "babel ./src/main.js -o ./bundle.js -w",
+    "dev": "webpack-dev-server --mode=development",
     "build": "webpack --mode=production"
   },
   "dependencies": {
